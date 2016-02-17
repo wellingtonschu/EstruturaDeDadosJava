@@ -8,7 +8,7 @@ public class Ex01 {
     public int ano;
     public String StrNome;
 
-    // pra transformar o m�s em data escrita por extenso sendo ingual ao mes jogar por extenso
+    // pra transformar o mês em data escrita por extenso sendo ingual ao mes jogar por extenso
     public void NomeMes() {
         if (mes == 1) {
             StrNome = "Janeiro";
@@ -17,7 +17,7 @@ public class Ex01 {
             StrNome = "Fevereiro";
         }
         if (mes == 3) {
-            StrNome = "Mar�o";
+            StrNome = "Março";
         }
         if (mes == 4) {
             StrNome = "Abril";
@@ -48,7 +48,7 @@ public class Ex01 {
         }
     }
 
-    // verifica se a data est� correta
+    // verifica se a data está correta
     public boolean verifica() {
         if ((mes == 4 || mes == 6 || mes == 9 || mes == 11)&& (dia <= 30 && dia > 0))
             return true;
