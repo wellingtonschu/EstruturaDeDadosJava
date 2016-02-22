@@ -2,7 +2,6 @@ package Lista01;
 
 public class Ex01 {
 
-    //A
     public boolean validaAno(int dia, int mes, int ano){
 
         boolean verifica = false;
@@ -33,7 +32,6 @@ public class Ex01 {
             return false;
     }
 
-    //B
     public boolean validaAnoString(String data){
 
         String datasplit[] = data.split("/");
@@ -68,7 +66,6 @@ public class Ex01 {
             return false;
     }
 
-    //C
     public String escreveData(String data){
 
         String datasplit[] = data.split("/");
