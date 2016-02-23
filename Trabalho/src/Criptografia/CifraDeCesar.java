@@ -21,6 +21,8 @@ public class CifraDeCesar {
         }
         return let;
     }
+
+    //teste
     //**************************************************************
     public char substituirDecifrar(char letraInicial, int k){
         char let = (char)(letraInicial - k);
