@@ -1,6 +1,7 @@
 package Criptografia;
 
 import java.text.Normalizer;
+import java.util.Scanner;
 
 public class CifraDeCesar {
 
