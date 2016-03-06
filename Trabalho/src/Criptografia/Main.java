@@ -9,11 +9,19 @@ public class Main {
         Scanner input = new Scanner(System.in);
         TadCifraDeCesar tad = new TadCifraDeCesar();
 
-        System.out.println("Frase: ");
+        System.out.print("Frase : ");
+        String palavra = input.nextLine();
+        System.out.print("Chave : ");
+        int key = input.nextInt();
+        String cifrada = tad.cifrar(palavra,key);
+        String descifrada = tad.decifrar(cifrada,key);
 
-        tad.cifrar("teste", 2);
-
-        System.out.println();
+        System.out.println("===========================");
+        System.out.println("Palavra   : " + palavra);
+        System.out.println("Chave     : " + key);
+        System.out.println("CIFRADA   : " + cifrada);
+        System.out.println("DECIFRADA : " + descifrada);
+        System.out.println("===========================");
 
     }
 

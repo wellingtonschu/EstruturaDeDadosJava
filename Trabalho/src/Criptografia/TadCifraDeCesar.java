@@ -8,6 +8,7 @@ public class TadCifraDeCesar {
         return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
     }
 
+    //Casos especiais ao cifrar
     public char substituirCifrar (char letraInicial, int key){
         char let = (char) (letraInicial + key);
 
@@ -21,6 +22,7 @@ public class TadCifraDeCesar {
         return let;
     }
 
+    //Casos especiais decifrar
     public char substituirDecifrar (char letraInicial, int key) {
         char let = (char) (letraInicial - key);
 
@@ -51,6 +53,7 @@ public class TadCifraDeCesar {
             result += substituirDecifrar(temp[a], key);
         }
         return result;
+
     }
 
 }
