@@ -1,4 +1,4 @@
-package Nodo;
+package ListasEncadeadas;
 
 import java.util.*;
 
@@ -226,6 +226,10 @@ public class Lista_Encadeada {
                 }else {
                     System.out.println("Insira uma posição menor que a quantidade de nodos");
                 }
+
+            }
+
+            if (op == 9){
 
             }
 
