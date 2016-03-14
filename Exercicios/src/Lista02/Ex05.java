@@ -22,7 +22,7 @@ public class Ex05 {
         int contador = 0;
         int opcao = 0;
 
-        while (opcao != 8){
+        while (opcao != 8) {
 
             System.out.println("1 - Inserir na posição inicial");
             System.out.println("2 - Inserir na posição final");
@@ -35,19 +35,19 @@ public class Ex05 {
 
             opcao = input.nextInt();
 
-            if (opcao < 1 || opcao > 8){
+            if (opcao < 1 || opcao > 8) {
 
                 System.out.println("Opção inválida");
 
             }
 
-            if (opcao == 1){
+            if (opcao == 1) {
 
                 System.out.println("Informe o número da posição inicial: ");
                 LISTA novo = new LISTA();
                 novo.numero = input.nextInt();
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     inicio = novo;
                     fim = novo;
@@ -66,13 +66,13 @@ public class Ex05 {
 
             }
 
-            if (opcao == 2){
+            if (opcao == 2) {
 
                 System.out.println("Insira o numero para a posição final da lista");
                 LISTA novo = new LISTA();
                 novo.numero = input.nextInt();
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     inicio = novo;
                     fim = novo;
@@ -92,7 +92,7 @@ public class Ex05 {
 
             }
 
-            if (opcao == 3){
+            if (opcao == 3) {
 
                 System.out.println("Posição a ser inserido: ");
                 int posicao = input.nextInt();
@@ -111,9 +111,9 @@ public class Ex05 {
                     boolean controleDeEntrada = true;
                     int contadorPosicao = 1;
 
-                    while (controleDeEntrada){
+                    while (controleDeEntrada) {
 
-                        if (contadorPosicao == posicao - 1){
+                        if (contadorPosicao == posicao - 1) {
 
                             anterior = aux;
                             aux = anterior.proximo;
@@ -139,9 +139,9 @@ public class Ex05 {
 
             }
 
-            if (opcao == 4){
+            if (opcao == 4) {
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     System.out.println("Vazio");
 
@@ -151,7 +151,7 @@ public class Ex05 {
 
                     aux = inicio;
 
-                    while (aux != null){
+                    while (aux != null) {
 
                         System.out.print("|" + aux.numero + "|");
                         aux = aux.proximo;
@@ -164,9 +164,9 @@ public class Ex05 {
 
             }
 
-            if (opcao == 5){
+            if (opcao == 5) {
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     System.out.println("Vazio");
 
@@ -181,18 +181,18 @@ public class Ex05 {
                     aux = inicio;
                     anterior = null;
 
-                    while (aux != null){
+                    while (aux != null) {
 
-                        if (aux.numero == numero){
+                        if (aux.numero == numero) {
 
                             encontrado++;
 
-                            if (aux == inicio){
+                            if (aux == inicio) {
 
                                 inicio = aux.proximo;
                                 aux = inicio;
 
-                            } else if (aux == fim){
+                            } else if (aux == fim) {
 
                                 anterior.proximo = null;
                                 fim = anterior;
@@ -216,7 +216,7 @@ public class Ex05 {
 
                     }
 
-                    if (encontrado == 0){
+                    if (encontrado == 0) {
 
                         System.out.println("Não encontrado");
 
@@ -228,9 +228,9 @@ public class Ex05 {
                 }
             }
 
-            if (opcao == 6){
+            if (opcao == 6) {
 
-                if(inicio == null){
+                if(inicio == null) {
 
                     System.out.println("Vazio");
 
@@ -243,7 +243,7 @@ public class Ex05 {
 
                     aux = inicio;
 
-                    while (aux != null){
+                    while (aux != null) {
 
                         vetor[auxVetor] = aux.numero;
                         aux = aux.proximo;
@@ -251,7 +251,7 @@ public class Ex05 {
 
                     }
 
-                    for (int i = 0; i < vetor.length; i++){
+                    for (int i = 0; i < vetor.length; i++) {
 
                         System.out.print("|" + vetor[i] + "|");
 

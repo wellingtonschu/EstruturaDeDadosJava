@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ex02 {
 
-    private static class LISTA{
+    private static class LISTA {
 
         public int numero;
         public int quantidade;
@@ -13,7 +13,7 @@ public class Ex02 {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
@@ -23,7 +23,7 @@ public class Ex02 {
         LISTA anterior = null;
         int opcao = 0;
 
-        while (opcao != 3){
+        while (opcao != 3) {
 
             System.out.println("1 - Inserir produto");
             System.out.println("2 - Inserir desconto");
@@ -33,13 +33,13 @@ public class Ex02 {
 
             opcao = input.nextInt();
 
-            if (opcao < 1 || opcao > 4){
+            if (opcao < 1 || opcao > 4) {
 
                 System.out.println("Opção inválida");
 
             }
 
-            if (opcao == 1){
+            if (opcao == 1) {
 
                 System.out.println("Informe o numero do iniciop da lista: ");
                 LISTA novo = new LISTA();
@@ -53,7 +53,7 @@ public class Ex02 {
                 System.out.println("Quantidade: ");
                 novo.quantidade = input.nextInt();
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     inicio = novo;
                     fim = novo;
@@ -71,7 +71,7 @@ public class Ex02 {
 
             }
 
-            if (opcao == 2){
+            if (opcao == 2) {
 
                 System.out.println("Desconto: ");
                 double desconto = input.nextDouble();
@@ -85,9 +85,9 @@ public class Ex02 {
 
             }
 
-            if (opcao == 3){
+            if (opcao == 3) {
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     System.out.println("A lista está vazia");
 
@@ -101,7 +101,7 @@ public class Ex02 {
                         System.out.println("Novo valor: " + aux.preco);
                         System.out.println("\n");
 
-                        if (aux.quantidade > 100){
+                        if (aux.quantidade > 100) {
 
                             System.out.println("Quantidade: " + aux.quantidade);
 

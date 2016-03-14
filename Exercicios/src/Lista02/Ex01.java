@@ -2,7 +2,7 @@ package Lista02;
 
 public class Ex01 {
 
-    private static class LISTA{
+    private static class LISTA {
 
         public int num;
         public LISTA proximo;
@@ -14,7 +14,7 @@ public class Ex01 {
     LISTA fim = null;
     LISTA aux = null;
 
-    public String Exerc01(LISTA inicio, int valor){
+    public String Exerc01(LISTA inicio, int valor) {
 
         aux = inicio;
         int NumTotal = 0;
@@ -22,16 +22,18 @@ public class Ex01 {
         int NumContemMaiorQueNumero = 0;
         String NumContemPosicao = "";
 
-        while (aux != null){
+        while (aux != null) {
 
             NumTotal++;
-            if (aux.num == valor){
+            if (aux.num == valor) {
                 NumContemNumero++;
                 NumContemPosicao = NumContemPosicao + NumTotal + " ";
+
             }
 
-            if (aux.num > valor){
+            if (aux.num > valor) {
                 NumContemMaiorQueNumero++;
+
             }
 
             aux = aux.proximo;
@@ -39,5 +41,7 @@ public class Ex01 {
         }
 
         return ("Numero total de nodos é: " + NumTotal + ", Número de nodos que possuem o valor: " + NumContemNumero + ", Posição dos nodos que possuem o numero maior que o valor " + NumContemMaiorQueNumero);
+
     }
+
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ex03 {
 
-    private static class LISTA{
+    private static class LISTA {
 
         public int numero;
         public LISTA proximo;
@@ -12,7 +12,7 @@ public class Ex03 {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
         LISTA inicio = null;
@@ -22,7 +22,7 @@ public class Ex03 {
         int numero;
         int achou;
 
-        while (opcao != 7){
+        while (opcao != 7) {
 
             System.out.println("1 - Inserir na posição inicial");
             System.out.println("2 - Listar maior menor e média");
@@ -31,18 +31,18 @@ public class Ex03 {
 
             opcao = input.nextInt();
 
-            if (opcao < 1 || opcao > 3){
+            if (opcao < 1 || opcao > 3) {
 
                 System.out.println("Opção inválida");
 
             }
 
-            if (opcao == 1){
+            if (opcao == 1) {
 
                 System.out.println("Informe o número do inicio da lista: ");
                 LISTA novo = new LISTA();
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     inicio = novo;
                     fim = novo;
@@ -62,9 +62,9 @@ public class Ex03 {
 
             }
 
-            if (opcao == 2){
+            if (opcao == 2) {
 
-                if (inicio == null){
+                if (inicio == null) {
 
                     System.out.println("Lista vazia");
 
@@ -77,7 +77,7 @@ public class Ex03 {
 
                     aux = inicio;
 
-                    while (aux != null){
+                    while (aux != null) {
 
                         quantidade++;
 
@@ -98,7 +98,7 @@ public class Ex03 {
                     System.out.println("Menor: " + menor);
                     System.out.println("\n");
 
-                }
+            }
 
             }
 
