@@ -27,9 +27,9 @@ public class Ex06 {
 
         LISTA anterior = null;
 
-        int opcoa = 0;
+        int opcao = 0;
 
-        while (opcoa != 6) {
+        while (opcao != 6) {
 
             System.out.println("1 - Inserir na  lista 01");
             System.out.println("2 - Mostrar lista 01");
@@ -39,9 +39,15 @@ public class Ex06 {
             System.out.println("6 - Sair");
             System.out.println("Opção:");
 
-            opcoa = input.nextInt();
+            opcao = input.nextInt();
 
-            if (opcoa < 1 || opcoa > 6) {
+            if (opcao < 1 || opcao > 6) {
+
+                System.out.println("Opção inválida");
+
+            }
+
+            if (opcao == 1) {
 
                 System.out.println("Informe o numero: ");
                 LISTA novo = new LISTA();
@@ -143,7 +149,7 @@ public class Ex06 {
 
             }
 
-            if (opcoa == 2) {
+            if (opcao == 2) {
 
                 if (inicioLista01 == null) {
 
@@ -167,7 +173,7 @@ public class Ex06 {
 
             }
 
-            if (opcoa == 3) {
+            if (opcao == 3) {
 
                 System.out.println("Informe o numero: ");
                 LISTA novo = new LISTA();
@@ -269,7 +275,7 @@ public class Ex06 {
 
             }
 
-            if (opcoa == 4) {
+            if (opcao == 4) {
 
                 if (inicioLista02 == null) {
 
@@ -293,7 +299,7 @@ public class Ex06 {
 
             }
 
-            if (opcoa == 5) {
+            if (opcao == 5) {
 
                 if (inicioLista01 == null && inicioLista02 == null) {
 
