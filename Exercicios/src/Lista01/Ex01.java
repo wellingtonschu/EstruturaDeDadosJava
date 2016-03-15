@@ -1,6 +1,6 @@
 package Lista01;
 
-public class Ex01 {
+public class Ex01 {/*
 
     public boolean validaAno(int dia, int mes, int ano){
 
@@ -100,4 +100,4 @@ public class Ex01 {
 
         return dia + " de " + stringMes + " de " + ano;
     }
-}
+*/}

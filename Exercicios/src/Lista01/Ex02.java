@@ -3,7 +3,7 @@ package Lista01;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ex02 {
+public class Ex02 {/*
 
     protected List<Pessoa> pessoa;
 
@@ -35,4 +35,4 @@ public class Ex02 {
             }
         }
     }
-}
+*/}

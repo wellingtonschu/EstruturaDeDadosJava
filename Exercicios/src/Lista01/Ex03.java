@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Ex03 {
 
-    protected List<Cliente> cliente;
+    /*protected List<Cliente> cliente;
 
     public Ex3(){
 
@@ -60,4 +60,5 @@ public class Ex03 {
         }
         return cont;
     }
+*/
 }
