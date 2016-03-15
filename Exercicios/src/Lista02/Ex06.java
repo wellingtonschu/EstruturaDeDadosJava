@@ -49,8 +49,10 @@ public class Ex06 {
 
             if (opcao == 1) {
 
-                System.out.println("Informe o numero: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o numero: ");
+
                 novo.numero = input.nextInt();
 
                 if (inicioLista01 == null) {
@@ -175,8 +177,10 @@ public class Ex06 {
 
             if (opcao == 3) {
 
-                System.out.println("Informe o numero: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o numero: ");
+
                 novo.numero = input.nextInt();
 
                 if (inicioLista02 == null) {

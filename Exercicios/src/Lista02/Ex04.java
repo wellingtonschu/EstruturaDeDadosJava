@@ -54,8 +54,10 @@ public class Ex04 {
 
             if (opcao == 1) {
 
-                System.out.println("Número para lista 1:");
                 LISTA1 novo1 = new LISTA1();
+
+                System.out.println("Número para lista 1:");
+
                 novo1.numeroLista1 = input.nextInt();
 
                 if (inicio1 == null) {
@@ -77,8 +79,10 @@ public class Ex04 {
 
             if (opcao == 2) {
 
-                System.out.println("Número para lista 2:");
                 LISTA2 novo2 = new LISTA2();
+
+                System.out.println("Número para lista 2:");
+
                 novo2.numeroLista2 = input.nextInt();
 
                 if (inicio2 == null) {

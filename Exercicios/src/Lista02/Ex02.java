@@ -41,8 +41,9 @@ public class Ex02 {
 
             if (opcao == 1) {
 
-                System.out.println("Informe o numero do iniciop da lista: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o numero do iniciop da lista: ");
 
                 System.out.println("Código: ");
                 novo.numero = input.nextInt();

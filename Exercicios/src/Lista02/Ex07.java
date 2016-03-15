@@ -49,8 +49,10 @@ public class Ex07 {
 
             if (opcao == 1) {
 
-                System.out.println("Informe o numero: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o numero: ");
+
                 novo.numero = input.nextInt();
 
                 if (inicioLista01 == null) {
@@ -75,8 +77,10 @@ public class Ex07 {
 
             if (opcao == 2) {
 
-                System.out.println("Insira o numero para a posição final da lista");
                 LISTA novo = new LISTA();
+
+                System.out.println("Insira o numero para a posição final da lista");
+
                 novo.numero = input.nextInt();
 
                 if (inicioLista01 == null) {
@@ -122,8 +126,10 @@ public class Ex07 {
 
             if (opcao == 4) {
 
-                System.out.println("Informe o numero: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o numero: ");
+
                 novo.numero = input.nextInt();
 
                 if (inicioLista01 == null) {
@@ -148,8 +154,10 @@ public class Ex07 {
 
             if (opcao == 5) {
 
-                System.out.println("Insira o numero para a posição final da lista");
                 LISTA novo = new LISTA();
+
+                System.out.println("Insira o numero para a posição final da lista");
+
                 novo.numero = input.nextInt();
 
                 if (inicioLista02 == null) {

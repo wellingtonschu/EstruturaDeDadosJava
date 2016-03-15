@@ -39,8 +39,9 @@ public class Ex03 {
 
             if (opcao == 1) {
 
-                System.out.println("Informe o número do inicio da lista: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o número do inicio da lista: ");
 
                 if (inicio == null) {
 
@@ -98,7 +99,7 @@ public class Ex03 {
                     System.out.println("Menor: " + menor);
                     System.out.println("\n");
 
-            }
+                }
 
             }
 

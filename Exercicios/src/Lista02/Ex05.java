@@ -43,8 +43,10 @@ public class Ex05 {
 
             if (opcao == 1) {
 
-                System.out.println("Informe o número da posição inicial: ");
                 LISTA novo = new LISTA();
+
+                System.out.println("Informe o número da posição inicial: ");
+
                 novo.numero = input.nextInt();
 
                 if (inicio == null) {
@@ -68,8 +70,10 @@ public class Ex05 {
 
             if (opcao == 2) {
 
-                System.out.println("Insira o numero para a posição final da lista");
                 LISTA novo = new LISTA();
+
+                System.out.println("Insira o numero para a posição final da lista");
+
                 novo.numero = input.nextInt();
 
                 if (inicio == null) {
