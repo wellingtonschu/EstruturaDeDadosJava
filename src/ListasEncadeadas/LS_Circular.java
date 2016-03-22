@@ -1,5 +1,7 @@
 package ListasEncadeadas;
 
+import java.util.Scanner;
+
 public class LS_Circular{
     //Definindo a classe que representar�
 //casa elemento da lista
