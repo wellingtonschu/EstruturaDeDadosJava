@@ -21,10 +21,19 @@ public class Main {
 
         } else if (opcao == 2) {
 
+            System.out.println();
 
+        } else if (opcao == 3) {
+
+        } else if (opcao == 4) {
+
+        } else if (opcao == 5) {
+
+        } else if (opcao == 6) {
+
+        } else if (opcao == 7) {
 
         }
-
 
     }
 

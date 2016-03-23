@@ -98,6 +98,19 @@ public class SalaDeAula {
 
         boolean alunoEncontrado = false;
 
+        while (auxiliarPilha != null) {
+
+            if (buscaID == auxiliarPilha.id) {
+
+                builder.append(auxiliarPilha.nome);
+
+            } else {
+
+                auxiliarPilha = auxiliarPilha.proximo;
+
+            }
+        }
+
         return builder.toString();
     }
 
