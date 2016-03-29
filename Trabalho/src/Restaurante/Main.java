@@ -8,6 +8,14 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
+        Restaurante r = new Restaurante();
+
+        System.out.println("entrada de cliente");
+
+        r.inserirClienteListaDeEspera(input.nextInt());
+
+        System.out.println(r.inserirClienteListaDeEspera());
+
     }
 
 }

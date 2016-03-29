@@ -5,31 +5,31 @@ public class Restaurante {
     private static class LISTAMESAS {
 
         public int quantidadeDeMesas;
-        public LISTAMESAS proximo;
+        public LISTAMESAS proximoListaMesas;
 
     }
 
     private static class FILAESPERA {
 
-        public FILAESPERA proximo;
+        public FILAESPERA proximoFilaEspera;
 
     }
 
     private static class FILABUFFET {
 
-        public FILABUFFET proximo;
+        public FILABUFFET proximoFilaBuffet;
 
     }
 
     private static class FILACAIXA {
 
-        public FILACAIXA prox;
+        public FILACAIXA proximoFilaCaixa;
 
     }
 
     private static class PILHAPRATOS {
 
-        public PILHAPRATOS proximo;
+        public PILHAPRATOS proximoPilhaPratos;
 
     }
 
@@ -62,5 +62,35 @@ public class Restaurante {
     PILHAPRATOS anteriorPilhaPratos = null;
     PILHAPRATOS proximoPilhaPratos = null;
     PILHAPRATOS auxiliarPilhaPratos = null;
+
+    public int inserirClienteListaDeEspera (int cliente) {
+
+        FILAESPERA novo = new FILAESPERA();
+
+        int contadorcClientes = 0;
+
+        if (inicioFilaEspera == null) {
+
+            inicioFilaEspera = novo;
+            fimFilaEspera = novo;
+            novo.proximoFilaEspera = null;
+
+            contadorcClientes++;
+
+        } else {
+
+            proximoFilaEspera = novo;
+            fimFilaEspera = novo;
+            novo.proximoFilaEspera = null;
+
+            contadorcClientes++;
+
+        }
+
+        cliente = contadorcClientes;
+
+        return cliente;
+
+    }
 
 }
