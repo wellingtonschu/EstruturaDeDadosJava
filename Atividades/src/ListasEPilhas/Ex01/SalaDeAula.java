@@ -1,7 +1,5 @@
 package ListasEPilhas.Ex01;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
 public class SalaDeAula {
 
     private static class PILHA {
@@ -109,6 +107,7 @@ public class SalaDeAula {
                 auxiliarPilha = auxiliarPilha.proximo;
 
             }
+
         }
 
         return builder.toString();
