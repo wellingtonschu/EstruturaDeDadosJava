@@ -12,6 +12,8 @@ public class Restaurante {
     private static class FILAESPERA {
 
         public FILAESPERA proximoFilaEspera;
+        public FILAESPERA fimFilaEspera;
+        public FILAESPERA inicioFilaEspera;
 
     }
 
@@ -88,6 +90,50 @@ public class Restaurante {
         }
 
         cliente = contadorcClientes;
+
+        return cliente;
+
+    }
+
+    public int inserirClienteFilaBuffet (int cliente) {
+
+        FILABUFFET novo = new FILABUFFET();
+        FILAESPERA espera = new FILAESPERA();
+
+        int contadorBuffet = 0;
+
+        if (inicioFilaBuffet == null) {
+
+            espera.inicioFilaEspera = proximoFilaEspera;
+            inicioFilaBuffet = novo;
+            fimFilaBuffet = novo;
+            novo.proximoFilaBuffet = null;
+
+            contadorBuffet++;
+
+        } else {
+
+            espera.inicioFilaEspera = proximoFilaEspera;
+            proximoFilaBuffet = novo;
+            fimFilaBuffet = novo;
+            novo.proximoFilaBuffet = null;
+
+            contadorBuffet++;
+
+        }
+
+        cliente = contadorBuffet;
+
+        return cliente;
+
+    }
+
+    public int escolherMesa (int cliente) {
+
+        LISTAMESAS novo = new LISTAMESAS();
+        FILABUFFET buffet = new FILABUFFET();
+
+
 
         return cliente;
 

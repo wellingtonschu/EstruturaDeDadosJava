@@ -14,8 +14,6 @@ public class Main {
 
         r.inserirClienteListaDeEspera(input.nextInt());
 
-        System.out.println(r.inserirClienteListaDeEspera());
-
     }
 
 }
