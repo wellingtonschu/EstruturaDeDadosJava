@@ -1,28 +1,6 @@
-package Pesquisa;
+package Lista04Pesquisa;
 
-public class PesquisaSeqBin {
-
-    public static int buscaSequencia(int vetor[], int numero) {
-
-        int pos = 0;
-
-        while (pos < vetor.length) {
-
-            if (vetor[pos] == numero) {
-
-                return pos;
-
-            } else {
-
-                pos++;
-
-            }
-
-        }
-
-        return -1;
-
-    }
+public class PesquisaBinaria {
 
     public static int buscaBinaria(int vetor[], int numero) {
 
@@ -30,21 +8,31 @@ public class PesquisaSeqBin {
         int max = vetor.length - 1;
         int meio = 0;
 
+        int intercoes = 0;
+
         while (min <= max) {
 
             meio = (min + max) / 2;
+            intercoes ++;
+            System.out.println("Iterações" + intercoes);
 
             if (vetor [meio] == numero) {
 
+                intercoes++;
+                System.out.println("Iterações" + intercoes);
                 return meio;
 
             } else if (vetor[meio] < numero){
 
+                intercoes++;
                 min = meio + 1;
+                System.out.println("Iterações" + intercoes);
 
             } else {
 
+                intercoes++;
                 max = meio - 1;
+                System.out.println("Iterações" + intercoes);
 
             }
 
