@@ -20,6 +20,8 @@ public class Restaurante {
     private static class FILABUFFET {
 
         public FILABUFFET proximoFilaBuffet;
+        public FILABUFFET inicioFilaBuffet;
+        public FILABUFFET FfimFilaBuffet;
 
     }
 
@@ -32,6 +34,10 @@ public class Restaurante {
     private static class PILHAPRATOS {
 
         public PILHAPRATOS proximoPilhaPratos;
+        public PILHAPRATOS inicioPilhaPratos;
+        public PILHAPRATOS fimPilhaPratos;
+        public PILHAPRATOS auxiliarPilhaPratos;
+        public PILHAPRATOS anteriorPilhaPratos;
 
     }
 
@@ -64,6 +70,26 @@ public class Restaurante {
     PILHAPRATOS anteriorPilhaPratos = null;
     PILHAPRATOS proximoPilhaPratos = null;
     PILHAPRATOS auxiliarPilhaPratos = null;
+
+    public int inserirPilhaPratos (int pratos) {
+
+        PILHAPRATOS novo = new PILHAPRATOS();
+
+        if (inicioPilhaPratos == null) {
+
+            inicioPilhaPratos = novo;
+            fimPilhaPratos = novo;
+            novo.proximoPilhaPratos = null;
+
+        } else {
+
+            novo.proximoPilhaPratos = inicioPilhaPratos;
+            inicioPilhaPratos = novo;
+
+        }
+
+        return pratos;
+    }
 
     public int inserirClienteListaDeEspera (int cliente) {
 
@@ -99,6 +125,7 @@ public class Restaurante {
 
         FILABUFFET novo = new FILABUFFET();
         FILAESPERA espera = new FILAESPERA();
+        PILHAPRATOS pratos = new PILHAPRATOS();
 
         int contadorBuffet = 0;
 
@@ -109,6 +136,9 @@ public class Restaurante {
             fimFilaBuffet = novo;
             novo.proximoFilaBuffet = null;
 
+            pratos.fimPilhaPratos = null;
+            pratos.fimPilhaPratos = anteriorPilhaPratos;
+
             contadorBuffet++;
 
         } else {
@@ -117,6 +147,9 @@ public class Restaurante {
             proximoFilaBuffet = novo;
             fimFilaBuffet = novo;
             novo.proximoFilaBuffet = null;
+
+            pratos.fimPilhaPratos = null;
+            pratos.fimPilhaPratos = anteriorPilhaPratos;
 
             contadorBuffet++;
 
@@ -128,14 +161,28 @@ public class Restaurante {
 
     }
 
-    public int escolherMesa (int cliente) {
+    public int escolherMesa (int cliente, int quantMesas) {
 
         LISTAMESAS novo = new LISTAMESAS();
         FILABUFFET buffet = new FILABUFFET();
 
+        int contadorMesas = quantMesas;
 
+        if (inicioListaDeMesas == null) {
 
-        return cliente;
+            buffet.inicioFilaBuffet = proximoFilaBuffet;
+
+            contadorMesas--;
+
+        } else {
+
+            buffet.inicioFilaBuffet = proximoFilaBuffet;
+
+            contadorMesas--;
+
+        }
+
+        return contadorMesas;
 
     }
 
