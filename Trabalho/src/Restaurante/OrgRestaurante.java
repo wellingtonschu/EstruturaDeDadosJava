@@ -280,8 +280,78 @@ public class OrgRestaurante {
 
         StringBuilder builder = new StringBuilder();
 
+        FILAESPERA novo = new FILAESPERA();
+
+        novo.setNome(nomeCliente);
+
+        if (inicioFilaEspera == null) {
+
+            inicioFilaEspera = novo;
+            fimFilaEspera = novo;
+            novo.setProximo(null);
+
+        } else {
+
+            fimFilaEspera.setProximo(novo);
+            fimFilaEspera = novo;
+            fimFilaEspera.setProximo(null);
+
+        }
+
+        builder.append("Inserido na fila de espera");
+
+        contador.setContador(contador.getContador() + 1);
+
         return builder.toString();
 
     }
+
+    public String removerFilaEspera() {
+
+        StringBuilder builder = new StringBuilder();
+
+        auxiliarFilaEspera = inicioFilaEspera;
+        inicioFilaEspera = (FILAESPERA) auxiliarFilaEspera.getProximo();
+        auxiliarFilaEspera = inicioFilaEspera;
+
+        contador.setContador(contador.getContador() - 1);
+
+        builder.append("Removido");
+
+        return builder.toString();
+
+    }
+
+    public int numeroPessoasFilaEspera() {
+
+        return contador.getContador();
+
+    }
+
+    public String selecionaPrimeiroElementoFilaEspera() {
+
+        return inicioFilaEspera.getNome();
+
+    }
+
+    public boolean checaFilaEspera() {
+
+        boolean possuiRegistroNaFilaEspera = true;
+
+        if (inicioBuffet == null) {
+
+            possuiRegistroNaFilaEspera = false;
+
+        }
+
+        return possuiRegistroNaFilaEspera;
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 }
