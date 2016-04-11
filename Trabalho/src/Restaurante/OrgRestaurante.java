@@ -57,9 +57,144 @@ public class OrgRestaurante {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    private static class FILACAIXA extends LISTA{
+
+        private String nome;
+        private int contadorPessoasCaixa;
+
+        public String getNome() {
+
+            return nome;
+
+        }
+
+        public void setNome(String nome) {
+
+            this.nome = nome;
+
+        }
+
+        public int getContadorPessoasCaixa() {
+
+            return contadorPessoasCaixa;
+
+        }
+
+        public void setContadorPessoasCaixa(int contadorPessoasCaixa) {
+
+            this.contadorPessoasCaixa = contadorPessoasCaixa;
+
+        }
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private static class FILAESPERA extends LISTA {
+
+        private String nome;
+
+        public String getNome() {
+
+            return nome;
+
+        }
+
+        public void setNome(String nome) {
+
+            this.nome = nome;
+
+        }
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private static class LISTAMESAS extends LISTA {
+
+        private String estadoListaMesas;
+        private String nomeMesa;
+
+        public String getEstadoListaMesas() {
+
+            return estadoListaMesas;
+
+        }
+
+        public void setEstadoListaMesas(String estadoListaMesas) {
+
+            this.estadoListaMesas = estadoListaMesas;
+
+        }
+
+        public String getNomeMesa() {
+
+            return nomeMesa;
+
+        }
+
+        public void setNomeMesa(String nomeMesa) {
+
+            this.nomeMesa = nomeMesa;
+
+        }
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private static class PILHAPRATOS extends LISTA {
+
+        private int numeroPratos;
+
+        public int getNumeroPratos() {
+
+            return numeroPratos;
+
+        }
+
+        public void setNumeroPratos(int numeroPratos) {
+
+            this.numeroPratos = numeroPratos;
+
+        }
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     FILABUFFET inicioBuffet = null;
     FILABUFFET fimBuffet = null;
     FILABUFFET auxiliarBuffet = null;
+
+    FILACAIXA inicioFilaCaixa = null;
+    FILACAIXA fimFilaCaixa = null;
+    FILACAIXA auxiliarFilaCAixa = null;
+    FILACAIXA contador = new FILACAIXA();
+
+    FILAESPERA inicioFilaEspera = null;
+    FILAESPERA fimFilaEspera = null;
+    FILAESPERA auxiliarFilaEspera = null;
+    FILAESPERA contadorFilaEspera = new FILAESPERA();
+
+    LISTAMESAS inicioListaMesas = null;
+    LISTAMESAS fimListaMesas = null;
+    LISTAMESAS auxiliarListaMesas = null;
+    LISTAMESAS contadorMesasDisponiveis = new LISTAMESAS();
+
+    PILHAPRATOS topoPilhaPratos = null;
+    PILHAPRATOS basePilhaPratos = null;
+    PILHAPRATOS auxiliarPilhaPratos = null;
+    PILHAPRATOS contadorPilhaPratos = new PILHAPRATOS();
+    PILHAPRATOS novo = new PILHAPRATOS();
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     public String inserirFilaBuffet(String nomeCliente) {
 
@@ -127,45 +262,6 @@ public class OrgRestaurante {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    private static class FILACAIXA extends LISTA{
-
-        private String nome;
-        private int contadorPessoasCaixa;
-
-        public String getNome() {
-
-            return nome;
-
-        }
-
-        public void setNome(String nome) {
-
-            this.nome = nome;
-
-        }
-
-        public int getContadorPessoasCaixa() {
-
-            return contadorPessoasCaixa;
-
-        }
-
-        public void setContadorPessoasCaixa() {
-
-            this.contadorPessoasCaixa = contadorPessoasCaixa;
-
-        }
-
-    }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    FILACAIXA inicioFilaCaixa = null;
-    FILACAIXA fimFilaCaixa = null;
-    FILACAIXA auxiliarFilaCAixa = null;
-
-    FILACAIXA contador = new FILACAIXA();
 
     public String inserirFilaCaixa(String nomeCliente) {
 
@@ -250,32 +346,6 @@ public class OrgRestaurante {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private static class FILAESPERA extends LISTA {
-
-        private String nome;
-
-        public String getNome() {
-
-            return nome;
-
-        }
-
-        public void setNome(String nome) {
-
-            this.nome = nome;
-
-        }
-
-    }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    FILAESPERA inicioFilaEspera = null;
-    FILAESPERA fimFilaEspera = null;
-    FILAESPERA auxiliarFilaEspera = null;
-
-    FILAESPERA contadorFilaEspera = new FILAESPERA();
-
     public String inserirFilaEspera(String nomeCliente) {
 
         StringBuilder builder = new StringBuilder();
@@ -351,45 +421,6 @@ public class OrgRestaurante {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    private static class LISTAMESAS extends LISTA {
-
-        private String estadoListaMesas;
-        private String nomeMesa;
-
-        public String getEstadoListaMesas() {
-
-            return estadoListaMesas;
-
-        }
-
-        public void setEstadoListaMesas() {
-
-            this.estadoListaMesas = estadoListaMesas;
-
-        }
-
-        public String getNomeMesa() {
-
-            return nomeMesa;
-
-        }
-
-        public void setNomeMesa() {
-
-            this.nomeMesa = nomeMesa;
-
-        }
-
-    }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    LISTAMESAS inicioListaMesas = null;
-    LISTAMESAS fimListaMesas = null;
-    LISTAMESAS auxiliarListaMesas = null;
-
-    LISTAMESAS contadorMesasDisponiveis = new LISTAMESAS();
 
     public void insereMesas() {
 
@@ -533,32 +564,6 @@ public class OrgRestaurante {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private static class PILHAPRATOS extends LISTA {
-
-        private int numeroPratos;
-
-        public int getNumeroPratos() {
-
-            return numeroPratos;
-
-        }
-
-        public void setNumeroPratos(int numeroPratos) {
-
-            this.numeroPratos = numeroPratos;
-
-        }
-
-    }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    PILHAPRATOS topoPilhaPratos = null;
-    PILHAPRATOS basePilhaPratos = null;
-    PILHAPRATOS auxiliarPilhaPratos = null;
-    PILHAPRATOS contadorPilhaPratos = new PILHAPRATOS();
-    PILHAPRATOS novo = new PILHAPRATOS();
-
     public void adicionarPratos() {
 
         contadorPilhaPratos.setContador(30);
@@ -583,6 +588,75 @@ public class OrgRestaurante {
            }
 
        }
+
+    }
+
+    public String reposicaoPratos (int numeroPratos) {
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < numeroPratos; i++) {
+
+            novo = new PILHAPRATOS();
+
+            novo.setNumeroPratos(contadorPilhaPratos.getContador() + i + 1);
+
+            if (topoPilhaPratos == null) {
+
+                topoPilhaPratos = novo;
+                basePilhaPratos = novo;
+                novo.setProximo(null);
+
+            } else {
+
+                novo.setProximo(topoPilhaPratos);
+                topoPilhaPratos = novo;
+
+            }
+
+            contadorPilhaPratos.setContador(contadorPilhaPratos.getContador() + 1);
+
+        }
+
+        builder.append("Pratos repostos");
+
+        return builder.toString();
+
+    }
+
+    public String retirarPrato() {
+
+        StringBuilder builder = new StringBuilder();
+
+        auxiliarPilhaPratos = topoPilhaPratos;
+        topoPilhaPratos = (PILHAPRATOS) auxiliarPilhaPratos.getProximo();
+        auxiliarPilhaPratos = topoPilhaPratos;
+
+        contadorPilhaPratos.setContador(contadorPilhaPratos.getContador() - 1);
+
+        builder.append("Prato utilizado");
+
+        return builder.toString();
+
+    }
+
+    public boolean checaPilhaPratos() {
+
+        boolean pilhaContemPratos = true;
+
+        if (topoPilhaPratos  == null) {
+
+            pilhaContemPratos = false;
+
+        }
+
+        return pilhaContemPratos;
+
+    }
+
+    public int numeroPratosNaPilha () {
+
+        return contadorPilhaPratos.getContador();
 
     }
 
