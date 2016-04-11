@@ -352,6 +352,59 @@ public class OrgRestaurante {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    private static class LISTAMESAS extends LISTA {
 
+        private String estadoListaMesas;
+        private String nomeMesa;
+
+        public String getEstadoListaMesas() {
+
+            return estadoListaMesas;
+
+        }
+
+        public void setEstadoListaMesas() {
+
+            this.estadoListaMesas = estadoListaMesas;
+
+        }
+
+        public String getNomeMesa() {
+
+            return nomeMesa;
+
+        }
+
+        public void setNomeMesa() {
+
+            this.nomeMesa = nomeMesa;
+
+        }
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    LISTAMESAS inicioListaMesas = null;
+    LISTAMESAS fimListaMesas = null;
+    LISTAMESAS auxiliarListaMesas = null;
+
+    LISTAMESAS contadorMesasDisponiveis = new LISTAMESAS();
+
+    public void insereMesas() {
+
+        contadorMesasDisponiveis.setContador(30);
+
+        for (int i = 0; i < contadorMesasDisponiveis.getContador(); i++) {
+
+            LISTAMESAS novo = new LISTAMESAS();
+
+            novo.setEstadoListaMesas();
+
+
+
+        }
+
+    }
 
 }
