@@ -533,7 +533,57 @@ public class OrgRestaurante {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    private static class PILHAPRATOS extends LISTA {
 
+        private int numeroPratos;
 
+        public int getNumeroPratos() {
+
+            return numeroPratos;
+
+        }
+
+        public void setNumeroPratos(int numeroPratos) {
+
+            this.numeroPratos = numeroPratos;
+
+        }
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    PILHAPRATOS topoPilhaPratos = null;
+    PILHAPRATOS basePilhaPratos = null;
+    PILHAPRATOS auxiliarPilhaPratos = null;
+    PILHAPRATOS contadorPilhaPratos = new PILHAPRATOS();
+    PILHAPRATOS novo = new PILHAPRATOS();
+
+    public void adicionarPratos() {
+
+        contadorPilhaPratos.setContador(30);
+
+       for (int i = 0; i < contadorPilhaPratos.getContador(); i++) {
+
+           novo = new PILHAPRATOS();
+
+           novo.setNumeroPratos(i + 1);
+
+           if (i == 0) {
+
+               topoPilhaPratos = novo;
+               basePilhaPratos = novo;
+               novo.setProximo(null);
+
+           } else {
+
+               novo.setProximo(topoPilhaPratos);
+               topoPilhaPratos = novo;
+
+           }
+
+       }
+
+    }
 
 }
