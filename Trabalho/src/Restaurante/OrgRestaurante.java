@@ -399,12 +399,141 @@ public class OrgRestaurante {
 
             LISTAMESAS novo = new LISTAMESAS();
 
-            novo.setEstadoListaMesas();
+            novo.setEstadoListaMesas("LIVRE");
 
+            novo.setNomeMesa("MESA: " + (contadorMesasDisponiveis.getContador() - 1));
 
+            if (i == 0) {
+
+                inicioListaMesas = novo;
+                fimListaMesas = novo;
+                novo.setProximo(null);
+
+            } else {
+
+                fimListaMesas.setProximo(novo);
+                fimListaMesas = novo;
+                fimListaMesas.setProximo(null);
+
+            }
 
         }
 
     }
+
+    public String ocuparMesa(String mesa) {
+
+        StringBuilder builder = new StringBuilder();
+
+        auxiliarListaMesas = inicioListaMesas;
+
+        String reservaMesa = " ";
+        boolean ocupacaoMesa = false;
+
+        while (auxiliarListaMesas != null && ocupacaoMesa == false) {
+
+            if (auxiliarListaMesas.getNomeMesa().equals(mesa) && auxiliarListaMesas.getEstadoListaMesas().equals("LIVRE")) {
+
+                auxiliarListaMesas.setEstadoListaMesas("Ocupada");
+                reservaMesa = auxiliarListaMesas.getNomeMesa();
+                auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
+                ocupacaoMesa = true;
+
+            } else {
+
+                auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
+
+            }
+
+        }
+
+        if (ocupacaoMesa == true) {
+
+            contadorMesasDisponiveis.setContador(contadorMesasDisponiveis.getContador() - 1);
+            builder.append("OK");
+
+        } else {
+
+            builder.append("Mesa nao encontrada");
+
+        }
+
+        return builder.toString();
+
+    }
+
+    public String liberaMesa(String mesa) {
+
+        StringBuilder builder = new StringBuilder();
+
+        auxiliarListaMesas = inicioListaMesas;
+
+        boolean mesaLiberada = false;
+
+        while (auxiliarListaMesas != null && mesaLiberada == false) {
+
+            if (auxiliarListaMesas.getNomeMesa().equals(mesa)) {
+
+                auxiliarListaMesas.setEstadoListaMesas("LIVRE");
+                auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
+                mesaLiberada = true;
+
+            } else {
+
+                auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
+
+            }
+
+        }
+
+        if (mesaLiberada == true) {
+
+            contadorMesasDisponiveis.setContador(contadorMesasDisponiveis.getContador() + 1);
+            builder.append("OK");
+
+        } else {
+
+            builder.append("Mesa nao encontrada");
+
+        }
+
+        return builder.toString();
+
+    }
+
+    public int numeroMesasLiberadas() {
+
+        return contadorMesasDisponiveis.getContador();
+
+    }
+
+    public int numeroPessoasOcupandoMesas() {
+
+        int contadorPessoasOcupandoMesas = 0;
+
+        auxiliarListaMesas = inicioListaMesas;
+
+        while (auxiliarListaMesas != null) {
+
+            if (auxiliarListaMesas.getEstadoListaMesas().equals("OCUPADO")) {
+
+                contadorPessoasOcupandoMesas++;
+
+            }
+
+            auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
+
+        }
+
+        return contadorPessoasOcupandoMesas;
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 }
