@@ -178,7 +178,6 @@ public class OrgRestaurante {
     FILAESPERA inicioFilaEspera = null;
     FILAESPERA fimFilaEspera = null;
     FILAESPERA auxiliarFilaEspera = null;
-    FILAESPERA contadorFilaEspera = new FILAESPERA();
 
     LISTAMESAS inicioListaMesas = null;
     LISTAMESAS fimListaMesas = null;
@@ -311,18 +310,6 @@ public class OrgRestaurante {
 
     }
 
-    public int numeroPessoasFilaCaixa() {
-
-        return contador.getContador();
-
-    }
-
-    public int numeroPessoasAtendidas() {
-
-        return contador.getContadorPessoasCaixa();
-
-    }
-
     public boolean checaFilaCaixa() {
 
         boolean possuiRegistroNaFilaCaixa = true;
@@ -392,12 +379,6 @@ public class OrgRestaurante {
 
     }
 
-    public int numeroPessoasFilaEspera() {
-
-        return contador.getContador();
-
-    }
-
     public String selecionaPrimeiroElementoFilaEspera() {
 
         return inicioFilaEspera.getNome();
@@ -458,7 +439,6 @@ public class OrgRestaurante {
 
         auxiliarListaMesas = inicioListaMesas;
 
-        String reservaMesa = " ";
         boolean ocupacaoMesa = false;
 
         while (auxiliarListaMesas != null && ocupacaoMesa == false) {
@@ -466,7 +446,6 @@ public class OrgRestaurante {
             if (auxiliarListaMesas.getNomeMesa().equals(mesa) && auxiliarListaMesas.getEstadoListaMesas().equals("LIVRE")) {
 
                 auxiliarListaMesas.setEstadoListaMesas("Ocupada");
-                reservaMesa = auxiliarListaMesas.getNomeMesa();
                 auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
                 ocupacaoMesa = true;
 
@@ -478,10 +457,10 @@ public class OrgRestaurante {
 
         }
 
-        if (ocupacaoMesa == true) {
+        if (ocupacaoMesa == false) {
 
             contadorMesasDisponiveis.setContador(contadorMesasDisponiveis.getContador() - 1);
-            builder.append("OK");
+            builder.append("LIVRE");
 
         } else {
 
@@ -501,7 +480,7 @@ public class OrgRestaurante {
 
         boolean mesaLiberada = false;
 
-        while (auxiliarListaMesas != null && mesaLiberada == false) {
+        while (auxiliarListaMesas != null && mesaLiberada == true) {
 
             if (auxiliarListaMesas.getNomeMesa().equals(mesa)) {
 
@@ -520,7 +499,7 @@ public class OrgRestaurante {
         if (mesaLiberada == true) {
 
             contadorMesasDisponiveis.setContador(contadorMesasDisponiveis.getContador() + 1);
-            builder.append("OK");
+            builder.append("LIVRE");
 
         } else {
 
@@ -535,28 +514,6 @@ public class OrgRestaurante {
     public int numeroMesasLiberadas() {
 
         return contadorMesasDisponiveis.getContador();
-
-    }
-
-    public int numeroPessoasOcupandoMesas() {
-
-        int contadorPessoasOcupandoMesas = 0;
-
-        auxiliarListaMesas = inicioListaMesas;
-
-        while (auxiliarListaMesas != null) {
-
-            if (auxiliarListaMesas.getEstadoListaMesas().equals("OCUPADO")) {
-
-                contadorPessoasOcupandoMesas++;
-
-            }
-
-            auxiliarListaMesas = (LISTAMESAS) auxiliarListaMesas.getProximo();
-
-        }
-
-        return contadorPessoasOcupandoMesas;
 
     }
 
@@ -651,12 +608,6 @@ public class OrgRestaurante {
         }
 
         return pilhaContemPratos;
-
-    }
-
-    public int numeroPratosNaPilha () {
-
-        return contadorPilhaPratos.getContador();
 
     }
 
