@@ -8,7 +8,7 @@ public class Main {
 
         Sort s = new Sort();
 
-        int arr[] = {10,7,3,1,9,7,4,3};
+        int arr[] = {10,8,3,1,9,7,4,3};
 
         System.out.println("Initial Array");
         System.out.println(Arrays.toString(arr));
@@ -17,6 +17,10 @@ public class Main {
         System.out.println("Initial Array");
         System.out.println(Arrays.toString(arr));
         s.selectionSort(arr);
+
+        System.out.println("Initial Array");
+        System.out.println(Arrays.toString(arr));
+        s.insertionSort(arr);
 
     }
 

@@ -59,4 +59,28 @@ public class Sort {
         System.out.println(Arrays.toString(arr));
     }
 
+    public static void insertionSort(int arr[]) {
+
+        int N=arr.length;
+        for(int i=1;i<N;i++) {
+
+            int j=i-1;
+            int temp=arr[i];
+
+            while(j>=0&&temp<arr[j]) {
+
+                arr[j+1]=arr[j];
+                j--;;
+
+            }
+
+            arr[j+1]=temp;
+            System.out.println("After pass "+i);
+            //Printing array after pass
+            System.out.println(Arrays.toString(arr));
+
+        }
+
+    }
+
 }
