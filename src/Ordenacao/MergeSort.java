@@ -7,10 +7,9 @@ public class MergeSort {
 
     static void mergeSort(int[] array, int inicio, int fim) {
 
-        int meio = 0;
+        int meio=0;
 
-        if (inicio < fim) {
-
+        if(inicio < fim) {
             meio = (inicio + fim) / 2;
 
             mergeSort(array, inicio, meio);
@@ -24,8 +23,8 @@ public class MergeSort {
 
     private static void merge(int[] array, int inicio, int meio, int fim) {
 
-        System.out.println("Parte da esquerda: " + Arrays.toString(Arrays.copyOfRange(array, inicio, meio + 1)));
-        System.out.println("Parte da direita: " + Arrays.toString(Arrays.copyOfRange(array, meio + 1, fim + 1)));
+        System.out.print("Parte da esquerda: "+Arrays.toString(Arrays.copyOfRange(array, inicio, meio + 1)));
+        System.out.print(" Parte da direita: "+Arrays.toString(Arrays.copyOfRange(array, meio+1,fim + 1))+"\n");
 
         int temp[] = new int[array.length];
         int l = inicio;
@@ -33,9 +32,9 @@ public class MergeSort {
         int m = meio + 1;
         int k = l;
 
-        while (l <= meio && m <= r) {
+        while(l <= meio && m <= r) {
 
-            if (array[l] <= array[m]) {
+            if(array[l] <= array[m]) {
 
                 temp[k++] = array[l++];
 
@@ -53,19 +52,19 @@ public class MergeSort {
 
         }
 
-        while (m <= r) {
+        while(m <= r) {
 
             temp[k++] = array[m++];
 
         }
 
-        for (int i1 = 1; i1 <= fim; i1++) {
+        for(int i1 = inicio;i1 <= fim;i1++) {
 
             array[i1] = temp[i1];
 
         }
 
-        System.out.println("Após junção: " + Arrays.copyOfRange(array, inicio, fim + 1));
+        System.out.println("Apos Junção:"+Arrays.toString(Arrays.copyOfRange(array, inicio, fim + 1)));
 
     }
 
