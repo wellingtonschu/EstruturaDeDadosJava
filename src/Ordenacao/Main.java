@@ -15,6 +15,15 @@ public class Main {
 
         int arr[] = {10,8,3,1,9,7,4,3};
 
+        int tamanhoArray2 = 100000;
+
+        int auxVetorCr2 = 0;
+        int[] array2Crescentes = new int[tamanhoArray2];
+        for (int y = 0; y < array2Crescentes.length; y++)
+        {
+            array2Crescentes[y] = auxVetorCr2++;
+        }
+
         /*System.out.println("Initial Array");
         System.out.println(Arrays.toString(arr));
         s.BubbleSort(arr);
@@ -32,8 +41,8 @@ public class Main {
         mergeSort(arr,0,arr.length-1);*/
 
         System.out.println("Initial Array");
-        System.out.println(Arrays.toString(arr));
-        quickSort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(array2Crescentes));
+        quickSort(array2Crescentes,0,array2Crescentes.length-1);
 
 
     }

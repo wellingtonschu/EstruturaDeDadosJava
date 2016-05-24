@@ -33,8 +33,6 @@ public class QuickSort {
         }
 
         troca(array, fim, menor + 1);
-        System.out.println("Pivot: " + array[menor + 1]);
-        System.out.println(Arrays.toString(array));
         return menor + 1;
 
     }
