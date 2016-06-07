@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Ex02 {
 
-    protected List<Pessoa> pessoa;
+    /*protected List<Pessoa> pessoa;
 
     public Ex02(){
         pessoa = new ArrayList<Pessoa>();
@@ -34,5 +34,5 @@ public class Ex02 {
                 pessoa.remove(x);
             }
         }
-    }
+    }*/
 }
